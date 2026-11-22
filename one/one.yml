@@ -1,0 +1,24 @@
+---
+version: 3
+
+images:
+  base_image:
+    name: registry.redhat.io/ansible-automation-platform/ee-minimal-rhel8:2.18
+
+dependencies:
+  python_interpreter:
+    python_path: /usr/bin/python3.12
+
+  galaxy:
+    collections:
+      - name: amazon.aws
+        source: private_hub_rh_certified
+      - name: amazon.ai
+        source: private_hub_rh_certified
+      - name: azure.azcollection
+        source: private_hub_rh_certified
+      - name: google.cloud
+        source: private_hub_rh_certified
+
+options:
+  package_manager_path: /usr/bin/microdnf
